@@ -17,6 +17,7 @@
         .date { color: #8696a0; font-size: 14px; margin-bottom: 30px; }
         .contact { background: #f0f2f5; padding: 20px; border-radius: 10px; margin-top: 30px; }
         .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e9edef; color: #8696a0; font-size: 14px; }
+        .note { background: #e7f3ff; padding: 15px; border-left: 4px solid #2196F3; margin: 15px 0; }
     </style>
 </head>
 <body>
@@ -25,112 +26,156 @@
         <p class="date">Last Updated: November 19, 2025</p>
 
         <h2>1. Introduction</h2>
-        <p>Welcome to DodaChat. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our messaging application and services.</p>
+        <p>Welcome to DodaChat. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our messaging application.</p>
         <p>By using DodaChat, you agree to the collection and use of information in accordance with this policy.</p>
 
         <h2>2. Information We Collect</h2>
         
-        <h3>Account Data</h3>
+        <h3>2.1 Account Information</h3>
         <ul>
-            <li>Phone number (verified via SMS)</li>
-            <li>Username</li>
-            <li>Password (encrypted using bcrypt)</li>
+            <li><strong>Phone Number:</strong> Used for account verification via Twilio SMS</li>
+            <li><strong>Username:</strong> Your chosen display name</li>
+            <li><strong>Password:</strong> Encrypted using bcrypt hashing</li>
+            <li><strong>Profile Picture:</strong> Optional photo you upload</li>
         </ul>
 
-        <h3>Messages & Media</h3>
+        <h3>2.2 Content You Share</h3>
         <ul>
-            <li>Text messages you send</li>
-            <li>Images and videos you share</li>
-            <li>Stories you post (visible for 24 hours)</li>
-            <li>Comments and likes on stories</li>
+            <li><strong>Messages:</strong> Text messages you send to other users</li>
+            <li><strong>Photos and Videos:</strong> Media you share in chats</li>
+            <li><strong>Stories:</strong> Photos and videos you post as 24-hour stories</li>
+            <li><strong>Story Interactions:</strong> Likes and comments you make on stories</li>
         </ul>
 
-        <h3>Device & Session Information</h3>
+        <h3>2.3 Usage Information (Stored Locally on Your Device)</h3>
         <ul>
-            <li>Device type and operating system</li>
-            <li>App version</li>
-            <li>IP address (for security)</li>
-            <li>Session data</li>
+            <li><strong>Login Session:</strong> Session token and login timestamp</li>
+            <li><strong>App Preferences:</strong> Theme mode, notification settings</li>
+            <li><strong>Usage Statistics:</strong> App launch count, stories created count</li>
+            <li><strong>Viewed Stories:</strong> List of stories you've viewed (for offline tracking)</li>
+            <li><strong>Story Drafts:</strong> Unsent stories saved temporarily</li>
         </ul>
 
-        <h2>3. How We Use Your Data</h2>
+        <div class="note">
+            <strong>Note:</strong> We do NOT collect IP addresses, device identifiers, or location data. Usage information listed above is stored locally on your device only and is never sent to our servers.
+        </div>
+
+        <h2>3. Permissions We Request</h2>
         <ul>
-            <li>Provide one-on-one text messaging</li>
-            <li>Enable image and video sharing</li>
-            <li>Display stories for 24 hours</li>
+            <li><strong>Photos/Storage:</strong> To let you select photos and videos for stories and profile pictures</li>
+            <li><strong>Camera:</strong> To take photos directly within the app</li>
+            <li><strong>Notifications:</strong> To alert you about new messages and story activity</li>
+        </ul>
+
+        <h2>4. How We Use Your Information</h2>
+        <ul>
+            <li>Create and manage your account</li>
             <li>Verify your phone number via Twilio SMS</li>
-            <li>Deliver messages between users</li>
-            <li>Send push notifications for new messages</li>
+            <li>Enable one-on-one messaging between users</li>
+            <li>Display and share your stories for 24 hours</li>
+            <li>Send push notifications for new messages (via Firebase Cloud Messaging)</li>
             <li>Send password reset codes via SMS</li>
-            <li>Manage active sessions across devices</li>
-            <li>Detect suspicious login attempts</li>
-            <li>Fix bugs and improve app performance</li>
-            <li>Prevent fraud and ensure account security</li>
+            <li>Provide story likes and comments functionality</li>
+            <li>Improve app performance and fix bugs</li>
         </ul>
 
-        <h2>4. Data Security</h2>
-        <ul>
-            <li>Passwords encrypted using bcrypt hashing algorithm</li>
-            <li>Phone verification via Twilio Verify API</li>
-            <li>All data transmission uses HTTPS encryption</li>
-            <li>Messages stored securely on encrypted servers</li>
-            <li>Regular security updates</li>
-        </ul>
-        <p><strong>Note:</strong> End-to-end encryption is not currently implemented but planned for future updates.</p>
-
-        <h2>5. Information Sharing</h2>
+        <h2>5. Data Storage & Retention</h2>
         
-        <h3>We DO NOT Sell Your Data</h3>
-        <p>Your personal information is never sold to third parties.</p>
-
-        <h3>Service Providers</h3>
-        <p>We share data with:</p>
+        <h3>5.1 Server Storage</h3>
         <ul>
-            <li>Twilio (SMS verification)</li>
-            <li>Render (backend hosting)</li>
-            <li>Railway (database)</li>
-            <li>Firebase (push notifications)</li>
+            <li><strong>Backend:</strong> Hosted on Render cloud platform</li>
+            <li><strong>Database:</strong> MySQL database on Railway cloud servers</li>
+            <li><strong>Messages:</strong> Retained until you delete them</li>
+            <li><strong>Stories:</strong> Automatically deleted after 24 hours</li>
+            <li><strong>Account Data:</strong> Kept while your account is active</li>
+            <li><strong>Deleted Content:</strong> Removed from our servers immediately</li>
         </ul>
 
-        <h3>Legal Requirements</h3>
-        <p>We may disclose information if required by law or court order.</p>
-
-        <h2>6. Data Storage & Retention</h2>
+        <h3>5.2 Local Device Storage</h3>
         <ul>
-            <li>Backend hosted on Render cloud platform</li>
-            <li>Database stored on Railway cloud servers</li>
-            <li>Messages retained until you delete them</li>
-            <li>Stories automatically delete after 24 hours</li>
-            <li>Session data kept for active logins only</li>
-            <li>Account data kept while your account is active</li>
-            <li>Deleted messages removed from our servers</li>
-            <li>Account deletion removes all associated data</li>
+            <li>Session data (login token, timestamp)</li>
+            <li>App preferences (theme, notifications)</li>
+            <li>Viewed stories tracking</li>
+            <li>Story drafts (until published or cleared)</li>
+            <li>Usage statistics (launch count, etc.)</li>
+        </ul>
+        <p><em>All local data is cleared when you log out or uninstall the app.</em></p>
+
+        <h2>6. Information Sharing</h2>
+        
+        <h3>6.1 We DO NOT Sell Your Data</h3>
+        <p>Your personal information is never sold to advertisers or third parties.</p>
+
+        <h3>6.2 Service Providers We Use</h3>
+        <ul>
+            <li><strong>Twilio:</strong> SMS verification for phone numbers</li>
+            <li><strong>Render:</strong> Backend hosting</li>
+            <li><strong>Railway:</strong> Database hosting</li>
+            <li><strong>Firebase Cloud Messaging:</strong> Push notifications</li>
+            <li><strong>Google AdMob:</strong> Displays ads in the app (AdMob may collect device info for ad targeting)</li>
         </ul>
 
-        <h2>7. Your Rights</h2>
+        <h3>6.3 With Other Users</h3>
+        <p>When you use DodaChat, your messages and stories are shared with the recipients you choose. Your profile picture and username are visible to users you chat with.</p>
+
+        <h3>6.4 Legal Requirements</h3>
+        <p>We may disclose information if required by law, court order, or to protect our legal rights and user safety.</p>
+
+        <h2>7. Data Security</h2>
+        <ul>
+            <li>All passwords are encrypted using bcrypt hashing (never stored in plain text)</li>
+            <li>Phone verification via Twilio's secure Verify API</li>
+            <li>All data transmission uses HTTPS encryption</li>
+            <li>Messages and media stored securely on encrypted servers</li>
+            <li>Regular security updates to protect against vulnerabilities</li>
+        </ul>
+        
+        <div class="note">
+            <strong>Important:</strong> End-to-end encryption (where only sender and receiver can read messages) is not currently implemented but is planned for future updates.
+        </div>
+
+        <h2>8. Your Rights & Controls</h2>
         <ul>
             <li>Change your password anytime</li>
+            <li>Update your profile picture</li>
             <li>Delete individual messages you sent</li>
+            <li>Delete your own stories</li>
             <li>Block users to prevent them from contacting you</li>
-            <li>Delete your account and all associated data</li>
+            <li>Manage notification preferences</li>
+            <li>Delete your account and all associated data permanently</li>
         </ul>
 
-        <h2>8. Children's Privacy</h2>
-        <p><strong>Age Requirement:</strong> DodaChat is intended for users aged 13 and above. We do not knowingly collect data from children under 13.</p>
-        <p><strong>Parental Notice:</strong> If we become aware of data collection from a child under 13, we will delete it immediately. Parents can contact us at b76561134@gmail.com</p>
+        <h2>9. Advertising</h2>
+        <p>DodaChat displays advertisements through Google AdMob. AdMob may collect and use device information for ad personalization according to Google's privacy policy. You can learn more about Google's ad practices at: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
 
-        <h2>9. Policy Updates</h2>
-        <p>We may update this policy to reflect changes in our practices or legal requirements. Material changes will be notified via in-app notification. Please review this policy periodically for updates.</p>
+        <h2>10. Children's Privacy</h2>
+        <p><strong>Age Requirement:</strong> DodaChat is intended for users aged 13 and above. We do not knowingly collect personal information from children under 13.</p>
+        <p><strong>Parental Notice:</strong> If we become aware that we have collected data from a child under 13, we will delete it immediately. Parents can contact us at b76561134@gmail.com</p>
+
+        <h2>11. International Users</h2>
+        <p>DodaChat is available worldwide. Your data may be transferred to and stored on servers in different countries. By using DodaChat, you consent to these data transfers.</p>
+
+        <h2>12. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy to reflect changes in our practices, legal requirements, or app features. When we make material changes, we will notify you via:</p>
+        <ul>
+            <li>In-app notification</li>
+            <li>Updated "Last Updated" date at the top of this policy</li>
+        </ul>
+        <p>We encourage you to review this policy periodically.</p>
+
+        <h2>13. Your Consent</h2>
+        <p>By using DodaChat, you consent to this Privacy Policy and agree to its terms. If you do not agree with this policy, please do not use DodaChat.</p>
 
         <div class="contact">
             <h3>Contact Us</h3>
-            <p>If you have questions about this Privacy Policy:</p>
+            <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data:</p>
             <p><strong>Email:</strong> b76561134@gmail.com</p>
             <p><strong>Support:</strong> noreply.dodachat@gmail.com</p>
+            <p>We will respond to your inquiry within 48 hours.</p>
         </div>
 
         <div class="footer">
-            <p>© 2025 DodaChat. All rights reserved.</p>
+            <p><strong>© 2025 DodaChat. All rights reserved.</strong></p>
             <p>Your Privacy is Protected 🔒</p>
         </div>
     </div>
