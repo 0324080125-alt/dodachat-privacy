@@ -291,6 +291,7 @@
                     <li>Phone number (verified via Twilio SMS)</li>
                     <li>Username (your chosen display name)</li>
                     <li>Password (encrypted using bcrypt)</li>
+                    <li>Profile picture (optional, stored on Cloudinary)</li>
                 </ul>
             </div>
 
@@ -301,6 +302,7 @@
                     <li>Photos and videos you share</li>
                     <li>Stories (24-hour posts)</li>
                     <li>Likes and comments on stories</li>
+                    <li>Profile pictures you upload</li>
                 </ul>
             </div>
 
@@ -327,8 +329,8 @@
                 <h2>Permissions We Request</h2>
             </div>
             <ul class="bullet-list">
-                <li>Photos/Storage: Select photos and videos for stories and profile</li>
-                <li>Camera: Take photos directly in the app</li>
+                <li>Photos/Storage: Select photos and videos for stories and profile pictures</li>
+                <li>Camera: Take photos directly in the app for stories or profile pictures</li>
                 <li>Notifications: Alert you about new messages and story activity</li>
             </ul>
         </div>
@@ -344,7 +346,8 @@
                 <li>Verify your phone number via Twilio SMS</li>
                 <li>Enable one-on-one messaging</li>
                 <li>Display and share your 24-hour stories</li>
-                <li>Send push notifications (via Firebase Cloud Messaging)</li>
+                <li>Display your profile picture to other users</li>
+                <li>Send push notifications (via OneSignal)</li>
                 <li>Send password reset codes via SMS</li>
                 <li>Provide story likes and comments</li>
                 <li>Improve app performance and fix bugs</li>
@@ -363,6 +366,7 @@
                 <ul class="bullet-list">
                     <li>Backend: Hosted on Render cloud platform</li>
                     <li>Database: MySQL on Railway cloud servers</li>
+                    <li>Profile Pictures: Stored on Cloudinary cloud storage</li>
                     <li>Messages: Retained until you delete them</li>
                     <li>Stories: Automatically deleted after 24 hours</li>
                     <li>Account data: Kept while account is active</li>
@@ -382,6 +386,44 @@
             </div>
         </div>
 
+        <!-- Profile Pictures -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">📷</div>
+                <h2>Profile Pictures</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>Storage & Processing</h3>
+                <ul class="bullet-list">
+                    <li>Profile pictures are uploaded to Cloudinary cloud storage</li>
+                    <li>Images are automatically resized to 500x500 pixels</li>
+                    <li>Face detection is used for optimal cropping</li>
+                    <li>Supported formats: JPEG, PNG, GIF, WebP</li>
+                    <li>Maximum file size: 5MB</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Your Control</h3>
+                <ul class="bullet-list">
+                    <li>You can upload a profile picture at any time</li>
+                    <li>You can change your profile picture at any time</li>
+                    <li>You can remove your profile picture at any time</li>
+                    <li>When removed, your profile picture is deleted from our servers</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Visibility</h3>
+                <ul class="bullet-list">
+                    <li>Your profile picture is visible to users you chat with</li>
+                    <li>Your profile picture appears in chat lists and conversations</li>
+                    <li>Blocked users cannot see your profile picture</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Data Security -->
         <div class="section">
             <div class="section-header">
@@ -392,6 +434,7 @@
                 <li>Passwords encrypted using bcrypt hashing</li>
                 <li>Phone verification via Twilio Verify API</li>
                 <li>All data transmission uses HTTPS encryption</li>
+                <li>Profile pictures stored securely on Cloudinary with HTTPS</li>
                 <li>Messages stored securely on encrypted servers</li>
                 <li>Regular security updates</li>
             </ul>
@@ -416,12 +459,12 @@
 
             <div class="subsection">
                 <h3>Service Providers We Use</h3>
-                <p style="color: #667781; font-size: 14px;">Twilio (SMS verification), Render (backend hosting), Railway (database), Firebase Cloud Messaging (notifications), Google AdMob (displays ads).</p>
+                <p style="color: #667781; font-size: 14px;">Twilio (SMS verification), Render (backend hosting), Railway (database), Cloudinary (profile picture storage), OneSignal (push notifications), Google AdMob (displays ads).</p>
             </div>
 
             <div class="subsection">
                 <h3>With Other Users</h3>
-                <p style="color: #667781; font-size: 14px;">Your messages and stories are shared with recipients you choose. Your username is visible to users you chat with.</p>
+                <p style="color: #667781; font-size: 14px;">Your messages and stories are shared with recipients you choose. Your username and profile picture are visible to users you chat with.</p>
             </div>
 
             <div class="subsection">
@@ -450,6 +493,8 @@
             </div>
             <ul class="bullet-list">
                 <li>Change your password anytime</li>
+                <li>Change your username anytime</li>
+                <li>Upload, change, or remove your profile picture anytime</li>
                 <li>Delete individual messages you sent</li>
                 <li>Delete your own stories</li>
                 <li>Block users to prevent contact</li>
@@ -470,7 +515,7 @@
             </div>
             <div class="subsection">
                 <h3>Parental Notice</h3>
-                <p style="color: #667781; font-size: 14px;">If we become aware of data collection from a child under 13, we will delete it immediately. Parents can contact us at noreply.dodachat@gmail.com</p>
+                <p style="color: #667781; font-size: 14px;">If we become aware of data collection from a child under 13, we will delete it immediately. Parents can contact us at dodachatcare@gmail.com</p>
             </div>
         </div>
 
