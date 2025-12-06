@@ -137,6 +137,7 @@
             padding: 20px 10px;
         }
         .scene2.show { opacity: 1; transform: scale(1); pointer-events: auto; transition: opacity 1s, transform 1s; }
+        .scene2.hide { opacity: 0; transform: scale(0.8); pointer-events: none; }
         
         .scene2-title { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #ffd700; margin-bottom: 20px; text-shadow: 0 0 20px rgba(255,215,0,0.5); text-align: center; }
         
@@ -202,6 +203,420 @@
         .firework { position: absolute; width: 4px; height: 4px; border-radius: 50%; animation: fireworkExplode 2s ease-out infinite; }
         @keyframes fireworkExplode { 0% { transform: scale(0); opacity: 1; box-shadow: 0 0 0 0 currentColor; } 50% { transform: scale(1); opacity: 1; box-shadow: 0 0 15px 8px currentColor; } 100% { transform: scale(2); opacity: 0; box-shadow: 0 0 30px 15px transparent; } }
         
+        /* ========== SCENE 3: SANTA GIVING GIFTS ========== */
+        .scene3 {
+            position: absolute;
+            width: 100%;
+            min-height: 100%;
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .scene3.show { opacity: 1; transform: scale(1); pointer-events: auto; transition: opacity 1s, transform 1s; }
+        
+        .scene3-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255,215,0,0.5);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        /* Human Santa */
+        .santa-human {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            animation: santaWalk 1s ease-in-out infinite;
+        }
+        
+        @keyframes santaWalk {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .santa-head {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(180deg, #ffd5c8 0%, #f5c4b8 100%);
+            border-radius: 50%;
+            z-index: 3;
+        }
+        
+        .santa-face-eyes {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        
+        .santa-eye {
+            width: 5px;
+            height: 5px;
+            background: #333;
+            border-radius: 50%;
+            animation: santaBlink 3s infinite;
+        }
+        
+        @keyframes santaBlink {
+            0%, 45%, 55%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.1); }
+        }
+        
+        .santa-nose {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #e8a090;
+            border-radius: 50%;
+        }
+        
+        .santa-cheeks {
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .cheek {
+            width: 8px;
+            height: 5px;
+            background: rgba(255,100,100,0.4);
+            border-radius: 50%;
+        }
+        
+        .santa-beard {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 25px;
+            background: #fff;
+            border-radius: 0 0 50% 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .santa-hat-big {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+        
+        .santa-hat-big .hat-cone {
+            width: 45px;
+            height: 35px;
+        }
+        
+        .santa-hat-big .hat-fur {
+            width: 50px;
+            height: 10px;
+            bottom: -5px;
+            left: -3px;
+        }
+        
+        .santa-hat-big .hat-pom {
+            width: 12px;
+            height: 12px;
+            top: -5px;
+            animation: pomBounce 0.5s ease-in-out infinite;
+        }
+        
+        @keyframes pomBounce {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+        }
+        
+        .santa-body {
+            position: absolute;
+            top: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(180deg, #e63946 0%, #c41e3a 100%);
+            border-radius: 10px 10px 5px 5px;
+            z-index: 2;
+        }
+        
+        .santa-belt {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #333;
+        }
+        
+        .santa-buckle {
+            position: absolute;
+            top: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 6px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+        
+        .santa-arm {
+            position: absolute;
+            top: 5px;
+            width: 15px;
+            height: 35px;
+            background: linear-gradient(180deg, #e63946 0%, #c41e3a 100%);
+            border-radius: 8px;
+            z-index: 1;
+        }
+        
+        .santa-arm.left {
+            left: -12px;
+            transform-origin: top center;
+            animation: armWaveLeft 1.5s ease-in-out infinite;
+        }
+        
+        .santa-arm.right {
+            right: -12px;
+            transform-origin: top center;
+            animation: armWaveRight 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes armWaveLeft {
+            0%, 100% { transform: rotate(20deg); }
+            50% { transform: rotate(-30deg); }
+        }
+        
+        @keyframes armWaveRight {
+            0%, 100% { transform: rotate(-20deg); }
+            50% { transform: rotate(30deg); }
+        }
+        
+        .santa-hand {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        
+        .santa-legs {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 1;
+        }
+        
+        .santa-leg {
+            width: 12px;
+            height: 25px;
+            background: linear-gradient(180deg, #e63946 0%, #c41e3a 100%);
+            border-radius: 5px;
+        }
+        
+        .santa-leg.left { animation: legWalk 0.5s ease-in-out infinite; }
+        .santa-leg.right { animation: legWalk 0.5s ease-in-out infinite 0.25s; }
+        
+        @keyframes legWalk {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+        
+        .santa-boot {
+            position: absolute;
+            bottom: 0;
+            left: -3px;
+            width: 18px;
+            height: 8px;
+            background: #222;
+            border-radius: 3px 8px 3px 3px;
+        }
+        
+        /* Gift bag */
+        .gift-bag {
+            position: absolute;
+            right: -25px;
+            top: 30px;
+            width: 30px;
+            height: 35px;
+            background: linear-gradient(180deg, #8b4513 0%, #654321 100%);
+            border-radius: 5px 5px 8px 8px;
+            z-index: 0;
+        }
+        
+        .gift-bag::before {
+            content: '🎁';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+        }
+        
+        /* Gifts flying out */
+        .flying-gift {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            z-index: 100;
+        }
+        
+        .flying-gift.fly {
+            animation: giftFly 2s ease-out forwards;
+        }
+        
+        @keyframes giftFly {
+            0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: translate(var(--tx), var(--ty)) scale(1.2) rotate(180deg); }
+            100% { opacity: 1; transform: translate(var(--fx), var(--fy)) scale(1) rotate(360deg); }
+        }
+        
+        /* Receiving letters */
+        .receivers {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .receiver {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            animation: receiverAppear 0.5s ease-out forwards;
+        }
+        
+        @keyframes receiverAppear {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .receiver-letter {
+            font-size: 1.8rem;
+            font-weight: 900;
+            animation: receiverBounce 0.8s ease-in-out infinite;
+        }
+        
+        .receiver-letter.doda { color: #00d4aa; text-shadow: 0 0 10px rgba(0,212,170,0.5); }
+        .receiver-letter.chat { color: #ffd700; text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+        
+        @keyframes receiverBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .receiver-gift {
+            font-size: 1.2rem;
+            margin-top: 3px;
+            animation: giftGlow 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes giftGlow {
+            from { filter: drop-shadow(0 0 3px currentColor); }
+            to { filter: drop-shadow(0 0 10px currentColor); }
+        }
+        
+        .gift-word {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 8px;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+        
+        .gift-word.joy { background: linear-gradient(45deg, #ff6b6b, #ff8e8e); color: #fff; }
+        .gift-word.peace { background: linear-gradient(45deg, #4ecdc4, #6ee7de); color: #fff; }
+        .gift-word.money { background: linear-gradient(45deg, #2ecc71, #58d68d); color: #fff; }
+        .gift-word.love { background: linear-gradient(45deg, #e74c3c, #ec7063); color: #fff; }
+        .gift-word.hope { background: linear-gradient(45deg, #9b59b6, #af7ac5); color: #fff; }
+        .gift-word.grace { background: linear-gradient(45deg, #3498db, #5dade2); color: #fff; }
+        .gift-word.faith { background: linear-gradient(45deg, #f39c12, #f7b731); color: #fff; }
+        .gift-word.bliss { background: linear-gradient(45deg, #1abc9c, #48c9b0); color: #fff; }
+        
+        .scene3-message {
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(255,215,0,0.15));
+            border-radius: 15px;
+            border: 1px solid rgba(255,215,0,0.3);
+        }
+        
+        .blessing {
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .blessing-sub {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .scene3-footer {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .footer-brand .doda { color: #00d4aa; }
+        .footer-brand .chat { color: #ffd700; }
+        
+        .footer-year {
+            font-size: 0.8rem;
+            color: #e0e0e0;
+            margin-top: 3px;
+        }
+        
+        /* Magic sparkles */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: sparkleFade 1.5s ease-out infinite;
+        }
+        
+        @keyframes sparkleFade {
+            0% { opacity: 1; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+        
         /* Desktop adjustments */
         @media (min-width: 769px) {
             .logo { width: 120px; height: 120px; }
@@ -223,6 +638,9 @@
             .path-year { font-size: 2.5rem; }
             .balloon-body { width: 200px; height: 240px; }
             .balloon-body::before { font-size: 2.5rem; }
+            .scene3-title { font-size: 2rem; }
+            .santa-human { width: 100px; height: 150px; }
+            .receiver-letter { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -338,37 +756,238 @@
             </div>
         </div>
         
+        <!-- ========== SCENE 3: SANTA GIVING GIFTS ========== -->
+        <div class="scene3" id="scene3">
+            <div class="scene3-title">🎅 Santa's Gifts for You! 🎁</div>
+            
+            <div class="santa-human" id="santaHuman">
+                <div class="santa-hat-big">
+                    <div class="hat-pom"></div>
+                    <div class="hat-cone"><div class="hat-fur"></div></div>
+                </div>
+                <div class="santa-head">
+                    <div class="santa-face-eyes">
+                        <div class="santa-eye"></div>
+                        <div class="santa-eye"></div>
+                    </div>
+                    <div class="santa-nose"></div>
+                    <div class="santa-cheeks">
+                        <div class="cheek"></div>
+                        <div class="cheek"></div>
+                    </div>
+                    <div class="santa-beard"></div>
+                </div>
+                <div class="santa-body">
+                    <div class="santa-belt"><div class="santa-buckle"></div></div>
+                    <div class="santa-arm left"><div class="santa-hand"></div></div>
+                    <div class="santa-arm right"><div class="santa-hand"></div></div>
+                </div>
+                <div class="santa-legs">
+                    <div class="santa-leg left"><div class="santa-boot"></div></div>
+                    <div class="santa-leg right"><div class="santa-boot"></div></div>
+                </div>
+                <div class="gift-bag"></div>
+            </div>
+            
+            <div id="flyingGifts"></div>
+            
+            <div class="receivers" id="receivers"></div>
+            
+            <div class="scene3-message">
+                <div class="blessing">✨ May these blessings fill your 2026! ✨</div>
+                <div class="blessing-sub">Spreading love, one chat at a time 💬</div>
+            </div>
+            
+            <div class="scene3-footer">
+                <div class="footer-brand">
+                    <span class="doda">Doda</span><span class="chat">Chat</span> 💚
+                </div>
+                <div class="footer-year">🎆 Happy New Year 2026! 🎆</div>
+            </div>
+        </div>
+        
         <div class="ribbon" id="ribbon"><span>Connect • Share • Celebrate</span></div>
     </div>
     
     <script>
-        (function(){const c=document.getElementById('stars');for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';c.appendChild(s);}})();
-        (function(){const c=document.getElementById('snow');const wh=['❄','❅','❆'];const rd=['❤','♥','✦'];for(let i=0;i<25;i++){const s=document.createElement('div');s.className='snowflake white';s.textContent=wh[Math.floor(Math.random()*wh.length)];s.style.left=Math.random()*100+'%';s.style.fontSize=(0.5+Math.random()*0.8)+'rem';s.style.animationDuration=(6+Math.random()*6)+'s';s.style.animationDelay=Math.random()*6+'s';c.appendChild(s);}for(let i=0;i<12;i++){const s=document.createElement('div');s.className='snowflake red';s.textContent=rd[Math.floor(Math.random()*rd.length)];s.style.left=Math.random()*100+'%';s.style.fontSize=(0.4+Math.random()*0.6)+'rem';s.style.animationDuration=(7+Math.random()*5)+'s';s.style.animationDelay=Math.random()*8+'s';c.appendChild(s);}})();
-        (function(){const box=document.getElementById('confettiBox');const items=['🎄','🎁','⭐','❄','❤','✦'];const colors=['#ff6b6b','#ffd700','#00d4aa','#ff69b4','#fff'];for(let i=0;i<35;i++){const c=document.createElement('div');c.className='confetti';c.textContent=items[Math.floor(Math.random()*items.length)];c.style.color=colors[Math.floor(Math.random()*colors.length)];c.style.fontSize=(12+Math.random()*12)+'px';c.style.setProperty('--x',(Math.random()-0.5)*500+'px');c.style.setProperty('--y',(Math.random()-0.5)*250+'px');box.appendChild(c);}})();
-        (function(){const fw=document.getElementById('fireworks');const colors=['#ff6b6b','#ffd700','#00d4aa','#ff69b4','#fff'];for(let i=0;i<12;i++){const f=document.createElement('div');f.className='firework';f.style.left=Math.random()*100+'%';f.style.top=Math.random()*50+'%';f.style.color=colors[Math.floor(Math.random()*colors.length)];f.style.background=colors[Math.floor(Math.random()*colors.length)];f.style.animationDelay=Math.random()*3+'s';f.style.animationDuration=(1.5+Math.random()*1)+'s';fw.appendChild(f);}})();
+        // Create stars
+        (function(){
+            const c = document.getElementById('stars');
+            for (let i = 0; i < 60; i++) {
+                const s = document.createElement('div');
+                s.className = 'star';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.top = Math.random() * 100 + '%';
+                s.style.animationDelay = Math.random() * 3 + 's';
+                c.appendChild(s);
+            }
+        })();
         
-        setTimeout(burstBalloon,3200);
+        // Create snowflakes
+        (function(){
+            const c = document.getElementById('snow');
+            const wh = ['❄', '❅', '❆'];
+            const rd = ['❤', '♥', '✦'];
+            for (let i = 0; i < 25; i++) {
+                const s = document.createElement('div');
+                s.className = 'snowflake white';
+                s.textContent = wh[Math.floor(Math.random() * wh.length)];
+                s.style.left = Math.random() * 100 + '%';
+                s.style.fontSize = (0.5 + Math.random() * 0.8) + 'rem';
+                s.style.animationDuration = (6 + Math.random() * 6) + 's';
+                s.style.animationDelay = Math.random() * 6 + 's';
+                c.appendChild(s);
+            }
+            for (let i = 0; i < 12; i++) {
+                const s = document.createElement('div');
+                s.className = 'snowflake red';
+                s.textContent = rd[Math.floor(Math.random() * rd.length)];
+                s.style.left = Math.random() * 100 + '%';
+                s.style.fontSize = (0.4 + Math.random() * 0.6) + 'rem';
+                s.style.animationDuration = (7 + Math.random() * 5) + 's';
+                s.style.animationDelay = Math.random() * 8 + 's';
+                c.appendChild(s);
+            }
+        })();
         
-        function burstBalloon(){
-            const balloon=document.getElementById('balloon');
-            if(balloon.classList.contains('burst'))return;
+        // Create confetti
+        (function(){
+            const box = document.getElementById('confettiBox');
+            const items = ['🎄', '🎁', '⭐', '❄', '❤', '✦'];
+            for (let i = 0; i < 35; i++) {
+                const c = document.createElement('div');
+                c.className = 'confetti';
+                c.textContent = items[Math.floor(Math.random() * items.length)];
+                c.style.fontSize = (12 + Math.random() * 12) + 'px';
+                c.style.setProperty('--x', (Math.random() - 0.5) * 500 + 'px');
+                c.style.setProperty('--y', (Math.random() - 0.5) * 250 + 'px');
+                box.appendChild(c);
+            }
+        })();
+        
+        // Create fireworks
+        (function(){
+            const fw = document.getElementById('fireworks');
+            const colors = ['#ff6b6b', '#ffd700', '#00d4aa', '#ff69b4', '#fff'];
+            for (let i = 0; i < 12; i++) {
+                const f = document.createElement('div');
+                f.className = 'firework';
+                f.style.left = Math.random() * 100 + '%';
+                f.style.top = Math.random() * 50 + '%';
+                f.style.color = colors[Math.floor(Math.random() * colors.length)];
+                f.style.background = colors[Math.floor(Math.random() * colors.length)];
+                f.style.animationDelay = Math.random() * 3 + 's';
+                f.style.animationDuration = (1.5 + Math.random() * 1) + 's';
+                fw.appendChild(f);
+            }
+        })();
+        
+        // Auto-pop balloon after 3.2s
+        setTimeout(burstBalloon, 3200);
+        
+        function burstBalloon() {
+            const balloon = document.getElementById('balloon');
+            if (balloon.classList.contains('burst')) return;
             balloon.classList.add('burst');
-            document.querySelectorAll('.confetti').forEach((c,i)=>{setTimeout(()=>c.classList.add('go'),i*12);});
-            setTimeout(()=>{
+            document.querySelectorAll('.confetti').forEach((c, i) => {
+                setTimeout(() => c.classList.add('go'), i * 12);
+            });
+            setTimeout(() => {
                 document.getElementById('balloonWrap').classList.add('hidden');
                 document.getElementById('mainContent').classList.add('reveal');
                 document.getElementById('stars').classList.add('on');
                 document.getElementById('snow').classList.add('on');
-                document.querySelectorAll('.deco').forEach(d=>d.classList.add('on'));
+                document.querySelectorAll('.deco').forEach(d => d.classList.add('on'));
                 document.getElementById('ribbon').classList.add('on');
-            },400);
-            setTimeout(showScene2,10000);
+            }, 400);
+            
+            // Scene 1 shows for 5 seconds after balloon pops
+            setTimeout(showScene2, 5000);
         }
         
-        function showScene2(){
+        function showScene2() {
             document.getElementById('scene1').classList.add('hide');
             document.getElementById('ribbon').classList.remove('on');
-            setTimeout(()=>{document.getElementById('scene2').classList.add('show');},500);
+            setTimeout(() => {
+                document.getElementById('scene2').classList.add('show');
+            }, 500);
+            
+            // Scene 2 shows for 5 seconds
+            setTimeout(showScene3, 5000);
+        }
+        
+        function showScene3() {
+            document.getElementById('scene2').classList.add('hide');
+            setTimeout(() => {
+                document.getElementById('scene3').classList.add('show');
+                startGiftAnimation();
+            }, 500);
+        }
+        
+        function startGiftAnimation() {
+            const gifts = [
+                { letter: 'D', emoji: '🎁', word: 'JOY', class: 'joy', type: 'doda' },
+                { letter: 'o', emoji: '💝', word: 'PEACE', class: 'peace', type: 'doda' },
+                { letter: 'd', emoji: '💰', word: 'MONEY', class: 'money', type: 'doda' },
+                { letter: 'a', emoji: '❤️', word: 'LOVE', class: 'love', type: 'doda' },
+                { letter: 'C', emoji: '🌟', word: 'HOPE', class: 'hope', type: 'chat' },
+                { letter: 'h', emoji: '✨', word: 'GRACE', class: 'grace', type: 'chat' },
+                { letter: 'a', emoji: '🎄', word: 'FAITH', class: 'faith', type: 'chat' },
+                { letter: 't', emoji: '🎀', word: 'BLISS', class: 'bliss', type: 'chat' }
+            ];
+            
+            const receiversDiv = document.getElementById('receivers');
+            const flyingDiv = document.getElementById('flyingGifts');
+            
+            gifts.forEach((gift, i) => {
+                setTimeout(() => {
+                    // Create flying gift
+                    const fly = document.createElement('div');
+                    fly.className = 'flying-gift';
+                    fly.innerHTML = gift.emoji;
+                    fly.style.left = '50%';
+                    fly.style.top = '180px';
+                    
+                    const angle = (i - 3.5) * 30;
+                    const distance = 80 + Math.random() * 40;
+                    const tx = Math.sin(angle * Math.PI / 180) * distance;
+                    const ty = -50 + Math.random() * 30;
+                    const fx = (i - 3.5) * 42;
+                    const fy = 100;
+                    
+                    fly.style.setProperty('--tx', tx + 'px');
+                    fly.style.setProperty('--ty', ty + 'px');
+                    fly.style.setProperty('--fx', fx + 'px');
+                    fly.style.setProperty('--fy', fy + 'px');
+                    
+                    flyingDiv.appendChild(fly);
+                    setTimeout(() => fly.classList.add('fly'), 50);
+                    
+                    // Create receiver after gift lands
+                    setTimeout(() => {
+                        const receiver = document.createElement('div');
+                        receiver.className = 'receiver';
+                        receiver.style.animationDelay = '0s';
+                        receiver.innerHTML = `
+                            <div class="receiver-letter ${gift.type}">${gift.letter}</div>
+                            <div class="receiver-gift">${gift.emoji}</div>
+                            <div class="gift-word ${gift.class}">${gift.word}</div>
+                        `;
+                        receiversDiv.appendChild(receiver);
+                        
+                        // Add sparkles
+                        for (let j = 0; j < 5; j++) {
+                            const sparkle = document.createElement('div');
+                            sparkle.className = 'sparkle';
+                            sparkle.style.left = (i * 42 + 20 + Math.random() * 20) + 'px';
+                            sparkle.style.top = (280 + Math.random() * 50) + 'px';
+                            sparkle.style.animationDelay = (Math.random() * 0.5) + 's';
+                            document.getElementById('scene3').appendChild(sparkle);
+                        }
+                    }, 1500);
+                    
+                }, i * 400);
+            });
         }
     </script>
 </body>
