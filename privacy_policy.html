@@ -300,9 +300,19 @@
                 <ul class="bullet-list">
                     <li>Text messages you send</li>
                     <li>Photos and videos you share</li>
-                    <li>Stories (24-hour posts)</li>
+                    <li>Stories (3-day posts visible for 72 hours)</li>
                     <li>Likes and comments on stories</li>
                     <li>Profile pictures you upload</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Social Information</h3>
+                <ul class="bullet-list">
+                    <li>Users you follow</li>
+                    <li>Users who follow you</li>
+                    <li>Follower and following counts</li>
+                    <li>Story engagement (likes, comments, views)</li>
                 </ul>
             </div>
 
@@ -345,8 +355,12 @@
                 <li>Create and manage your account</li>
                 <li>Verify your phone number via Twilio SMS</li>
                 <li>Enable one-on-one messaging</li>
-                <li>Display and share your 24-hour stories</li>
+                <li>Display and share your 3-day stories (72 hours)</li>
                 <li>Display your profile picture to other users</li>
+                <li>Manage your follow relationships</li>
+                <li>Show suggested users based on activity</li>
+                <li>Personalize your story feed using our algorithm</li>
+                <li>Identify trending stories based on engagement</li>
                 <li>Send push notifications (via OneSignal)</li>
                 <li>Send password reset codes via SMS</li>
                 <li>Provide story likes and comments</li>
@@ -368,7 +382,8 @@
                     <li>Database: MySQL on Railway cloud servers</li>
                     <li>Profile Pictures: Stored on Cloudinary cloud storage</li>
                     <li>Messages: Retained until you delete them</li>
-                    <li>Stories: Automatically deleted after 24 hours</li>
+                    <li>Stories: Automatically deleted after 3 days (72 hours)</li>
+                    <li>Follow relationships: Kept while account is active</li>
                     <li>Account data: Kept while account is active</li>
                     <li>Deleted content: Removed immediately</li>
                 </ul>
@@ -382,6 +397,45 @@
                     <li>Story drafts (until published or cleared)</li>
                     <li>Usage statistics (launch count, etc.)</li>
                     <li>Cleared when you delete your account</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Social Features & Data -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">👥</div>
+                <h2>Social Features & Data</h2>
+            </div>
+
+            <div class="subsection">
+                <h3>Follow System</h3>
+                <ul class="bullet-list">
+                    <li>Your follow/following relationships are stored on our servers</li>
+                    <li>Follower and following counts are visible to other users</li>
+                    <li>Follow relationships are used to personalize your story feed</li>
+                    <li>You can unfollow users at any time</li>
+                    <li>When you delete your account, all follow relationships are removed</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Algorithm & Personalization</h3>
+                <ul class="bullet-list">
+                    <li>Story order is determined by our algorithm</li>
+                    <li>Factors include: who you follow, engagement, recency</li>
+                    <li>Stories from followed users are prioritized</li>
+                    <li>Trending stories are highlighted based on likes and comments</li>
+                    <li>Your own stories always appear first</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>User Search</h3>
+                <ul class="bullet-list">
+                    <li>You can search for users by username</li>
+                    <li>Search only queries usernames, not phone numbers</li>
+                    <li>Suggested users are based on activity and popularity</li>
                 </ul>
             </div>
         </div>
@@ -418,7 +472,8 @@
                 <h3>Visibility</h3>
                 <ul class="bullet-list">
                     <li>Your profile picture is visible to users you chat with</li>
-                    <li>Your profile picture appears in chat lists and conversations</li>
+                    <li>Your profile picture appears in chat lists, stories, and Social tab</li>
+                    <li>Your profile picture appears in search results and suggested users</li>
                     <li>Blocked users cannot see your profile picture</li>
                 </ul>
             </div>
@@ -464,7 +519,7 @@
 
             <div class="subsection">
                 <h3>With Other Users</h3>
-                <p style="color: #667781; font-size: 14px;">Your messages and stories are shared with recipients you choose. Your username and profile picture are visible to users you chat with.</p>
+                <p style="color: #667781; font-size: 14px;">Your messages and stories are shared with recipients you choose. Your username, profile picture, and follower/following counts are visible to other users. Users you follow and users following you are visible in your profile.</p>
             </div>
 
             <div class="subsection">
@@ -497,6 +552,9 @@
                 <li>Upload, change, or remove your profile picture anytime</li>
                 <li>Delete individual messages you sent</li>
                 <li>Delete your own stories</li>
+                <li>Delete your own comments on stories</li>
+                <li>Follow or unfollow any user</li>
+                <li>View your followers and following lists</li>
                 <li>Block users to prevent contact</li>
                 <li>Delete your account and all data permanently</li>
                 <li>Delete your conversations between you and other users at anytime</li>
